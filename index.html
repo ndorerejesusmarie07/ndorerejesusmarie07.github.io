@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NDORERE Jésus Marie — Full-Stack, AI & Automation Developer</title>
+  <meta
+    name="description"
+    content="NDORERE Jésus Marie (NDORERE Jesus-M) is a computer engineering student and full-stack, AI, and automation developer based in Bujumbura, Burundi. Creator of Pixplay, BitTickPro, and ClipSD."
+  />
+  <meta
+    name="keywords"
+    content="NDORERE Jésus Marie, NDORERE Jesus-M, Pixplay, pixplaylite.xyz, BitTickPro, bittickpro.onrender.com, ClipSD, Bujumbura, Burundi, Full-Stack Developer, AI Engineer"
+  />
+  <meta name="author" content="NDORERE Jésus Marie" />
+
+  <!-- Open Graph for Social & Search Previews -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NDORERE Jésus Marie — Portfolio & Projects" />
+  <meta
+    property="og:description"
+    content="Official hub for NDORERE Jésus Marie: Pixplay, BitTickPro, ClipSD, and software engineering projects."
+  />
+  <meta property="og:url" content="https://ndorerejesusmarie07.github.io" />
+
+  <!-- Structured Data (Schema.org JSON-LD) for Google & AI Entity Recognition -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "NDORERE Jésus Marie",
+      "alternateName": ["NDORERE Jesus Marie", "NDORERE Jesus-M"],
+      "jobTitle": "Computer Engineering Student, Full-Stack & AI Developer",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bujumbura",
+        "addressCountry": "BI"
+      },
+      "url": "https://ndorerejesusmarie07.github.io",
+      "sameAs": [
+        "https://github.com/ndorerejesusmarie07",
+        "https://pixplaylite.xyz",
+        "https://pixplay.42web.io",
+        "https://bittickpro.onrender.com",
+        "https://bittick.onrender.com",
+        "https://github.com/ndorerejesusmarie07/ClipSD"
+      ]
+    }
+  </script>
+
+  <!-- Professional Vector Icons (Lucide) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --bg: #0b1120;
+      --surface: #111827;
+      --surface-elevated: #1e293b;
+      --border: rgba(148, 163, 184, 0.16);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-secondary: #10b981;
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header / Hero */
+    header {
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(11, 17, 32, 1) 100%);
+      padding: 48px 0 40px;
+    }
+
+    .top-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(56, 189, 248, 0.14);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s, background 0.2s;
+    }
+
+    .nav-btn:hover {
+      border-color: var(--accent);
+      background: var(--surface-elevated);
+      transform: translateY(-1px);
+    }
+
+    .hero-title {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .hero-bio {
+      max-width: 780px;
+      color: var(--muted);
+      font-size: 0.98rem;
+      margin-bottom: 20px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .meta-item i {
+      width: 16px;
+      height: 16px;
+      color: var(--accent-secondary);
+    }
+
+    /* Main Sections */
+    main {
+      padding: 44px 0 64px;
+    }
+
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .section-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    .section-title i {
+      width: 22px;
+      height: 22px;
+      color: var(--accent);
+    }
+
+    /* Add Project Panel */
+    .add-project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 36px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .field label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .field input {
+      width: 100%;
+      padding: 11px 13px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 0.93rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .field input:focus {
+      border-color: var(--accent);
+    }
+
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 18px;
+      border: none;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #06101e;
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 15px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.88rem;
+      cursor: pointer;
+    }
+
+    .btn-secondary:hover {
+      color: var(--text);
+      border-color: var(--muted);
+    }
+
+    .status-note {
+      font-size: 0.85rem;
+      color: var(--accent-secondary);
+      min-height: 20px;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 28px rgba(2, 6, 23, 0.55);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(16, 185, 129, 0.14);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      display: grid;
+      place-items: center;
+      color: var(--accent-secondary);
+      flex-shrink: 0;
+    }
+
+    .card-open {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.82rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .project-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .project-desc {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .project-url {
+      font-size: 0.82rem;
+      color: var(--accent);
+      word-break: break-all;
+      margin-bottom: 14px;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    .stack-badge {
+      font-size: 0.78rem;
+      color: var(--muted);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .delete-btn {
+      position: relative;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+    }
+
+    .delete-btn:hover {
+      color: #f87171;
+      background: rgba(248, 113, 113, 0.12);
+      border-color: rgba(248, 113, 113, 0.3);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="top-bar">
+        <a class="brand" href="https://ndorerejesusmarie07.github.io">
+          <span class="brand-icon"><i data-lucide="cpu"></i></span>
+          <span>NDORERE Jésus Marie</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary Links">
+          <a class="nav-btn" href="https://github.com/ndorerejesusmarie07" target="_blank" rel="noopener noreferrer">
+            <i data-lucide="github"></i>
+            <span>GitHub</span>
+          </a>
+          <a class="nav-btn" href="https://pixplaylite.xyz" target="_blank" rel="noopener noreferrer">
+            <i data-lucide="globe"></i>
+            <span>Pixplay</span>
+          </a>
+          <a class="nav-btn" href="https://bittickpro.onrender.com" target="_blank" rel="noopener noreferrer">
+            <i data-lucide="trending-up"></i>
+            <span>BitTickPro</span>
+          </a>
+        </nav>
+      </div>
+
+      <h1 class="hero-title">NDORERE Jésus Marie</h1>
+      <p class="hero-subtitle">Computer Engineering Student • Full-Stack Web Developer • AI &amp; Automation Engineer</p>
+      <p class="hero-bio">
+        Developer based in Bujumbura, Burundi building web platforms, market analysis and automation systems,
+        and software tools across Python, Flask, Django, PHP, Java, C++, JavaScript, and SQL/PostgreSQL.
+      </p>
+
+      <div class="meta-row">
+        <span class="meta-item">
+          <i data-lucide="map-pin"></i>
+          <span>Bujumbura, Burundi</span>
+        </span>
+        <span class="meta-item">
+          <i data-lucide="layers"></i>
+          <span>Full-Stack, AI &amp; Automation</span>
+        </span>
+        <span class="meta-item">
+          <i data-lucide="link"></i>
+          <span>ndorerejesusmarie07.github.io</span>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Add Project Form -->
+    <section class="add-project-card" aria-labelledby="add-project-heading">
+      <div class="section-header" style="margin-bottom: 0;">
+        <h2 id="add-project-heading" class="section-title">
+          <i data-lucide="folder-plus"></i>
+          <span>Add New Project</span>
+        </h2>
+      </div>
+
+      <form id="project-form">
+        <div class="form-grid">
+          <div class="field">
+            <label for="project-name">Project Name</label>
+            <input
+              id="project-name"
+              type="text"
+              placeholder="e.g. BitTickPro, Pixplay, ClipSD"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="project-url">Project Link (URL)</label>
+            <input
+              id="project-url"
+              type="url"
+              placeholder="https://example.com"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="project-desc">Short Description</label>
+            <input
+              id="project-desc"
+              type="text"
+              placeholder="What this platform or tool does"
+            />
+          </div>
+
+          <div class="field">
+            <label for="project-stack">Technologies</label>
+            <input
+              id="project-stack"
+              type="text"
+              placeholder="Python, Flask, PostgreSQL"
+            />
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">
+            <i data-lucide="plus-circle"></i>
+            <span>Add to Projects</span>
+          </button>
+          <button type="button" id="reset-defaults-btn" class="btn-secondary">
+            <i data-lucide="rotate-ccw"></i>
+            <span>Restore Default Projects</span>
+          </button>
+          <span id="status-note" class="status-note" role="status"></span>
+        </div>
+      </form>
+    </section>
+
+    <!-- Projects Cards List -->
+    <section aria-labelledby="projects-list-heading">
+      <div class="section-header">
+        <h2 id="projects-list-heading" class="section-title">
+          <i data-lucide="layout-grid"></i>
+          <span>Projects &amp; Platforms</span>
+        </h2>
+      </div>
+
+      <div id="projects-grid" class="projects-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Designed &amp; built by <strong>NDORERE Jésus Marie</strong> — Bujumbura, Burundi</p>
+    </div>
+  </footer>
+
+  <script>
+    const STORAGE_KEY = "ndorere_portfolio_projects_v1";
+
+    const DEFAULT_PROJECTS = [
+      {
+        id: "pixplay",
+        name: "Pixplay",
+        url: "https://pixplaylite.xyz",
+        description: "Digital entertainment and media platform with companion web and Android app presence.",
+        stack: "HTML, CSS, JS, PHP, Kotlin",
+        icon: "play-circle",
+        isDefault: true
+      },
+      {
+        id: "bittickpro",
+        name: "BitTickPro",
+        url: "https://bittickpro.onrender.com",
+        description: "Cryptocurrency market analysis and automated trading web application.",
+        stack: "Python, Flask, PostgreSQL",
+        icon: "activity",
+        isDefault: true
+      },
+      {
+        id: "clipsd",
+        name: "ClipSD",
+        url: "https://github.com/ndorerejesusmarie07/ClipSD",
+        description: "Automated short-form video slicing and media processing repository.",
+        stack: "Python, FFmpeg, MoviePy",
+        icon: "film",
+        isDefault: true
+      }
+    ];
+
+    function normalizeUrl(rawUrl) {
+      const trimmed = rawUrl.trim();
+      if (!/^https?:\/\//i.test(trimmed)) {
+        return "https://" + trimmed;
+      }
+      return trimmed;
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement("div");
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function loadProjects() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (!saved) {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_PROJECTS));
+          return [...DEFAULT_PROJECTS];
+        }
+        const parsed = JSON.parse(saved);
+        return Array.isArray(parsed) && parsed.length ? parsed : [...DEFAULT_PROJECTS];
+      } catch (err) {
+        return [...DEFAULT_PROJECTS];
+      }
+    }
+
+    function saveProjects(projects) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(projects));
+    }
+
+    function renderProjects() {
+      const grid = document.getElementById("projects-grid");
+      const projects = loadProjects();
+
+      grid.innerHTML = projects
+        .map((proj) => {
+          const safeUrl = escapeHtml(normalizeUrl(proj.url));
+          const safeName = escapeHtml(proj.name);
+          const safeDesc = escapeHtml(proj.description || "Software & digital project by NDORERE Jésus Marie.");
+          const safeStack = escapeHtml(proj.stack || "Web / Software");
+          const iconName = escapeHtml(proj.icon || "external-link");
+
+          return `
+            <a class="project-card" href="${safeUrl}" target="_blank" rel="noopener noreferrer">
+              <div>
+                <div class="card-top">
+                  <span class="card-icon"><i data-lucide="${iconName}"></i></span>
+                  <span class="card-open">
+                    <span>Open</span>
+                    <i data-lucide="arrow-up-right"></i>
+                  </span>
+                </div>
+                <h3 class="project-title">${safeName}</h3>
+                <p class="project-desc">${safeDesc}</p>
+                <p class="project-url">${safeUrl}</p>
+              </div>
+              <div class="card-footer">
+                <span class="stack-badge">${safeStack}</span>
+                ${
+                  !proj.isDefault
+                    ? `<button
+                        type="button"
+                        class="delete-btn"
+                        title="Remove project"
+                        aria-label="Remove ${safeName}"
+                        data-id="${escapeHtml(proj.id)}"
+                      >
+                        <i data-lucide="trash-2"></i>
+                      </button>`
+                    : ""
+                }
+              </div>
+            </a>
+          `;
+        })
+        .join("");
+
+      grid.querySelectorAll(".delete-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const id = btn.getAttribute("data-id");
+          const updated = loadProjects().filter((p) => p.id !== id);
+          saveProjects(updated);
+          renderProjects();
+          setStatus("Project removed.");
+        });
+      });
+
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+    }
+
+    function setStatus(message) {
+      const note = document.getElementById("status-note");
+      note.textContent = message;
+      setTimeout(() => {
+        if (note.textContent === message) {
+          note.textContent = "";
+        }
+      }, 3500);
+    }
+
+    document.getElementById("project-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const nameInput = document.getElementById("project-name");
+      const urlInput = document.getElementById("project-url");
+      const descInput = document.getElementById("project-desc");
+      const stackInput = document.getElementById("project-stack");
+
+      const name = nameInput.value.trim();
+      const url = normalizeUrl(urlInput.value);
+      const description = descInput.value.trim();
+      const stack = stackInput.value.trim();
+
+      if (!name || !url) return;
+
+      const projects = loadProjects();
+      projects.unshift({
+        id: "proj_" + Date.now(),
+        name,
+        url,
+        description: description || "Project developed by NDORERE Jésus Marie.",
+        stack: stack || "Software",
+        icon: "folder-git-2",
+        isDefault: false
+      });
+
+      saveProjects(projects);
+      renderProjects();
+
+      nameInput.value = "";
+      urlInput.value = "";
+      descInput.value = "";
+      stackInput.value = "";
+      setStatus(`Added "${name}" to your projects list.`);
+    });
+
+    document.getElementById("reset-defaults-btn").addEventListener("click", () => {
+      saveProjects([...DEFAULT_PROJECTS]);
+      renderProjects();
+      setStatus("Default projects restored.");
+    });
+
+    renderProjects();
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+  </script>
+</body>
+</html>
